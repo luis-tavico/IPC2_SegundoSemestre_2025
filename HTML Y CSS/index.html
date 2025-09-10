@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página de Contacto</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <header id="header">
+        <h1>Bienvenido a Nuestra Página de Contacto</h1>
+        <p>¡Déjanos un mensaje y te responderemos pronto!</p>
+    </header>
+    <section class="section">
+        <h2><i class="fa-solid fa-phone" style="color: blue;"></i> Información de Contacto</h2>
+        <p>Puedes comunicarte con nosotros a través de los siguientes medios:</p>
+
+        <ul class="contact-list">
+            <li><i class="fa-solid fa-envelope" style="color: black;"></i> Correo: contacto@ejemplo.com</li>
+            <li><i class="fa-solid fa-phone" style="color: blue;"></i> Teléfono: +502 1234-5678</li>
+            <li><i class="fa-solid fa-location-dot" style="color: red;"></i> Dirección: Ciudad de Guatemala, Guatemala</li>
+        </ul>
+
+        <h3><i class="fa-solid fa-camera" style="color: steelblue;"></i> Nuestra oficina</h3>
+        <img src="oficina.jpg" alt="Imagen de la oficina" width="300">
+    </section>
+    <section class="section">
+        <h2><i class="fa-solid fa-calendar" style="color: #74C0FC;"></i> Horarios de Atención</h2>
+        <table class="table-container">
+            <tr>
+                <th>Día</th>
+                <th>Horario</th>
+            </tr>
+            <tr>
+                <td>Lunes - Viernes</td>
+                <td>8:00 AM - 6:00 PM</td>
+            </tr>
+            <tr>
+                <td>Sábado</td>
+                <td>9:00 AM - 1:00 PM</td>
+            </tr>
+        </table>
+    </section>
+    <section class="section">
+        <h2><i class="fa-solid fa-clipboard-list" style="color: #B197FC;"></i> Formulario de Contacto</h2>
+        <form id="contact-form" action="#" method="POST">
+            <label class="form-label" for="nombre">Nombre:</label>
+            <input class="form-input" type="text" id="nombre" name="nombre" required>
+
+            <label class="form-label" for="email">Correo Electrónico:</label>
+            <input class="form-input" type="email" id="email" name="email" required>
+
+            <label class="form-label" for="mensaje">Mensaje:</label>
+            <textarea class="form-textarea" id="mensaje" name="mensaje" rows="4" required></textarea>
+
+            <button id="submit-button" type="submit">Enviar</button>
+        </form>
+    </section>
+    <script src="script.js"></script>
+</body>
+</html>
