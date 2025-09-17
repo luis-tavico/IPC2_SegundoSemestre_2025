@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block contenido %}
+    <div style="text-align: center;">
+        <div style="font-size: 4em; margin-bottom: 1rem;"></div>
+        
+        <div class="error">
+            <h3 style="margin-bottom: 1rem;">Ha ocurrido un error. Algo salio mal.</h3>
+            <p style="font-size: 1.1em;">{{ mensaje }}</p>
+        </div>
+
+        <div style="margin-top: 2rem;">
+            <a href="{{ url_for('lista_estudiantes') }}" class="btn" style="background: #6c757d; margin-right: 10px;">
+                Ver Estudiantes
+            </a>
+            <a href="{{ url_for('inicio') }}" class="btn">
+                Volver al Inicio
+            </a>
+        </div>
+    </div>
+{% endblock %}

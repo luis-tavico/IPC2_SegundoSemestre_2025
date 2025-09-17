@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block contenido %}
+    <div style="text-align: center; padding: 2rem 0;">
+        <h3 style="color: #667eea; margin-bottom: 1rem;">¡Bienvenido a nuestra aplicacion!</h3>
+        <p style="font-size: 1.1em; margin-bottom: 2rem; color: #666;">
+            Explora nuestra aplicacion web.
+        </p>
+        
+        <div style="display: flex; gap: 20px; justify-content: center; flex-wrap: wrap;">
+            <div class="card" style="max-width: 300px;">
+                <h4 style="color: #667eea; margin-bottom: 1rem;">Gestion de Estudiantes</h4>
+                <p style="margin-bottom: 1rem;">
+                    Explora nuestra lista de estudiantes y ve sus detalles individuales.
+                </p>
+                <a href="{{ url_for('lista_estudiantes') }}" class="btn">Ver Estudiantes</a>
+            </div>
+            
+            <div class="card" style="max-width: 300px;">
+                <h4 style="color: #667eea; margin-bottom: 1rem;">Tecnologias Usadas</h4>
+                <ul style="text-align: left; margin-bottom: 1rem;">
+                    <li>Flask (Python)</li>
+                    <li>Jinja2 Templates</li>
+                    <li>HTML5 & CSS3</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+{% endblock %}
