@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+
+{% block contenido %}
+    <div class="card" style="max-width: 500px; margin: 0 auto;">
+        <div style="text-align: center; margin-bottom: 2rem;">
+            <div style="width: 80px; height: 80px; background: linear-gradient(135deg, #667eea, #764ba2); border-radius: 50%; margin: 0 auto 1rem; display: flex; align-items: center; justify-content: center; font-size: 2em; color: white;">
+                {{ estudiante.nombre[0] }}
+            </div>
+            <h3 style="color: #667eea; margin-bottom: 0.5rem;">{{ estudiante.nombre }}</h3>
+        </div>
+
+        <div class="student-info">
+            <div class="info-item">
+                <span class="info-label">ID:</span>
+                <span>{{ estudiante.id }}</span>
+            </div>
+            <div class="info-item">
+                <span class="info-label">Nombre Completo:</span>
+                <span>{{ estudiante.nombre }}</span>
+            </div>
+            <div class="info-item">
+                <span class="info-label">Edad:</span>
+                <span>{{ estudiante.edad }} años</span>
+            </div>
+            <div class="info-item">
+                <span class="info-label">Carrera:</span>
+                <span>{{ estudiante.carrera }}</span>
+            </div>
+            <div class="info-item">
+                <span class="info-label">Estado:</span>
+                <span style="color: #28a745; font-weight: bold;">Activo</span>
+            </div>
+        </div>
+
+        <div style="text-align: center; margin-top: 2rem; display: flex; gap: 10px; justify-content: center; flex-wrap: wrap;">
+            <a href="{{ url_for('lista_estudiantes') }}" class="btn" style="background: #6c757d;">
+                Volver a Lista
+            </a>
+            <a href="{{ url_for('inicio') }}" class="btn">
+                Inicio
+            </a>
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block contenido %}
+    <p style="margin-bottom: 2rem; color: #666;">
+        Total de estudiantes registrados: <strong>{{ estudiantes|length }}</strong>
+    </p>
+
+    {% for estudiante in estudiantes %}
+        <div class="card">
+            <h3 style="color: #667eea; margin-bottom: 0.5rem;">{{ estudiante.nombre }}</h3>
+            <div style="display: flex; gap: 20px; margin-bottom: 1rem; flex-wrap: wrap;">
+                <span><strong>Edad:</strong> {{ estudiante.edad }} años</span>
+                <span><strong>Carrera:</strong> {{ estudiante.carrera }}</span>
+            </div>
+            <a href="{{ url_for('detalle_estudiante', id=estudiante.id) }}" class="btn">
+                Ver Detalles
+            </a>
+        </div>
+    {% else %}
+        <div class="card">
+            <p style="text-align: center; color: #666;">No hay estudiantes registrados.</p>
+        </div>
+    {% endfor %}
+
+    <div style="margin-top: 2rem; text-align: center;">
+        <a href="{{ url_for('inicio') }}" class="btn" style="background: #6c757d;">
+            Volver al Inicio
+        </a>
+    </div>
+{% endblock %}
