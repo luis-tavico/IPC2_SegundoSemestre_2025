@@ -49,9 +49,11 @@ class Sistema:
 
                 indice = lista_drones.buscar_indice(id)
                 dron = lista_drones.obtener(indice)
-                dron.hilera_asignada = hilera
+                
+                nuevo_dron = dron.copiar()
+                nuevo_dron.hilera_asignada = hilera
 
-                lista_drones_asignados.insertar(dron)
+                lista_drones_asignados.insertar(nuevo_dron)
             
             lista_planes_riego = ListaEnlazada()
             planes_riego = invernadero.getElementsByTagName('plan')

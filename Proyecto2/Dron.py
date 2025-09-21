@@ -36,3 +36,16 @@ class Dron:
         self.gramos_fertilizante_usados = 0
         self.plantas_a_regar = Cola()
         self.pasos = ListaEnlazada()
+        
+    def copiar(self):
+        return Dron(
+            self.id,
+            self.nombre,
+            self.hilera_asignada,
+            self.posicion_actual,
+            self.posicion_objetivo,
+            self.litros_agua_usados,
+            self.gramos_fertilizante_usados,
+            self.plantas_a_regar,
+            self.pasos
+        )
