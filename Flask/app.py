@@ -7,7 +7,7 @@ estudiantes = [
     {'id': 2, 'nombre': 'Carlos Lopez', 'edad': 22, 'carrera': 'Medicina'},
     {'id': 3, 'nombre': 'Maria Rodriguez', 'edad': 19, 'carrera': 'Psicologia'},
     {'id': 4, 'nombre': 'Jose Martinez', 'edad': 21, 'carrera': 'Derecho'},
-    {'id': 5, 'nombre': 'Sofia Contreras', 'edad': 23, 'carrera': 'Arquitectura'}
+    {'id': 5, 'nombre': 'Sofia Gomez', 'edad': 23, 'carrera': 'Arquitectura'}
 ]
 
 @app.route('/', methods=['GET'])
