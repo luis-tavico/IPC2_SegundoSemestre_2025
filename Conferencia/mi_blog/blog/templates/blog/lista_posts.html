@@ -1,0 +1,67 @@
+{% extends 'blog/base.html' %}
+
+{% block title %}Inicio - Mi Blog{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="col-md-8">
+        <h1 class="mb-4">Últimos Posts</h1>
+        
+        {% for post in page_obj %}
+            <div class="card mb-4">
+                <div class="card-body">
+                    <h5 class="card-title">
+                        <a href="{% url 'post-detail' post.pk %}" class="text-decoration-none">
+                            {{ post.titulo }}
+                        </a>
+                    </h5>
+                    <p class="card-text">{{ post.contenido|truncatewords:30 }}</p>
+                    <small class="text-muted">
+                        Por {{ post.autor.username }} el {{ post.fecha_creacion|date:"d M Y" }}
+                    </small>
+                </div>
+            </div>
+        {% empty %}
+            <p>No hay posts disponibles.</p>
+        {% endfor %}
+        
+        <!-- Paginación -->
+        {% if page_obj.has_other_pages %}
+            <nav aria-label="Paginación">
+                <ul class="pagination">
+                    {% if page_obj.has_previous %}
+                        <li class="page-item">
+                            <a class="page-link" href="?page=1">Primero</a>
+                        </li>
+                        <li class="page-item">
+                            <a class="page-link" href="?page={{ page_obj.previous_page_number }}">Anterior</a>
+                        </li>
+                    {% endif %}
+                    
+                    <li class="page-item active">
+                        <span class="page-link">{{ page_obj.number }} de {{ page_obj.paginator.num_pages }}</span>
+                    </li>
+                    
+                    {% if page_obj.has_next %}
+                        <li class="page-item">
+                            <a class="page-link" href="?page={{ page_obj.next_page_number }}">Siguiente</a>
+                        </li>
+                        <li class="page-item">
+                            <a class="page-link" href="?page={{ page_obj.paginator.num_pages }}">Último</a>
+                        </li>
+                    {% endif %}
+                </ul>
+            </nav>
+        {% endif %}
+    </div>
+    
+    <div class="col-md-4">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Sobre este blog</h5>
+                <p class="card-text">Bienvenido a nuestro blog desarrollado con Django!</p>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

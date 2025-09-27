@@ -1,0 +1,35 @@
+{% extends 'blog/base.html' %}
+
+{% block title %}{{ post.titulo }} - Mi Blog{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="col-md-8">
+        <article>
+            <h1 class="mb-3">{{ post.titulo }}</h1>
+            <small class="text-muted mb-3 d-block">
+                Por {{ post.autor.username }} el {{ post.fecha_creacion|date:"d M Y H:i" }}
+            </small>
+            <div class="mt-3">
+                {{ post.contenido|linebreaks }}
+            </div>
+        </article>
+        
+        <div class="mt-4">
+            <a href="{% url 'blog-home' %}" class="btn btn-secondary">← Volver al inicio</a>
+        </div>
+    </div>
+    
+    <div class="col-md-4">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Información del autor</h5>
+                <p class="card-text">
+                    <strong>Autor:</strong> {{ post.autor.username }}<br>
+                    <strong>Publicado:</strong> {{ post.fecha_creacion|date:"d M Y" }}
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
